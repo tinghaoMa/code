@@ -1,0 +1,35 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.skywang.test"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <receiver android:name=".GridWidgetProvider">
+            <intent-filter>                
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                
+                <!-- GridWidgetProvider接收点击gridview的响应事件 -->
+                <action android:name="com.skywang.test.COLLECTION_VIEW_ACTION" />
+                <!-- GridWidgetProvider接收点击bt_refresh的响应事件 -->
+                <action android:name="com.skywang.test.BT_REFRESH_ACTION" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+				android:resource="@xml/widget_provider"/>
+        </receiver>        
+        
+        <service   
+            android:name=".GridWidgetService"  
+            android:permission="android.permission.BIND_REMOTEVIEWS" />  
+            
+    </application>
+
+</manifest>

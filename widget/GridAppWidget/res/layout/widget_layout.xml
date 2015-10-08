@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    
+	<RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginLeft="8dip"
+	    android:layout_marginRight="8dip"
+	    >
+	    
+		<TextView
+	        android:id="@+id/tv_head"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:gravity="left|center_vertical"
+	        android:textSize="24sp"
+	        android:text="SkyWang" />
+	    
+	    <Button
+	        android:id="@+id/bt_refresh"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_alignParentRight="true"
+	        android:gravity="right|center_vertical"
+	        android:textSize="18sp"
+	        android:text="Refresh" />
+	    
+	</RelativeLayout>    
+		
+        
+    <GridView
+        android:id="@+id/gridview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="4dip"
+        android:horizontalSpacing="4dip"
+        android:columnWidth="80dip"
+        android:gravity="center" />        
+
+</LinearLayout>
