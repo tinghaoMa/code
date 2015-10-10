@@ -1,0 +1,112 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (javaClasses.cpp:136), pid=9548, tid=5372
+#  fatal error: Invalid layout of preloaded class
+#
+# JRE version:  (7.0_79-b15) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (24.79-b02 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000000254e000):  JavaThread "Unknown thread" [_thread_in_vm, id=5372, stack(0x0000000002900000,0x0000000002a00000)]
+
+Stack: [0x0000000002900000,0x0000000002a00000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x000000000254e000 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=5372, stack(0x0000000002900000,0x0000000002a00000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.026 loading class 0x00000000025d0d50 done
+Event: 0.026 loading class 0x00000000025d0750 done
+Event: 0.026 loading class 0x00000000025d0730
+Event: 0.026 loading class 0x00000000025d88a0
+Event: 0.026 loading class 0x00000000025d88a0 done
+Event: 0.026 loading class 0x00000000025d88d0
+Event: 0.026 loading class 0x00000000025d88d0 done
+Event: 0.026 loading class 0x00000000025d8900
+Event: 0.026 loading class 0x00000000025d8900 done
+Event: 0.026 loading class 0x00000000025d0730 done
+
+
+Dynamic libraries:
+0x000000013fda0000 - 0x000000013fdd3000 	C:\Program Files\Java\jre7\bin\javaw.exe
+0x00000000779a0000 - 0x0000000077b49000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00000000772a0000 - 0x00000000773bf000 	C:\Windows\system32\kernel32.dll
+0x000007fefdeb0000 - 0x000007fefdf1c000 	C:\Windows\system32\KERNELBASE.dll
+0x000007fefe310000 - 0x000007fefe3eb000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefe7d0000 - 0x000007fefe86f000 	C:\Windows\system32\msvcrt.dll
+0x000007fefe870000 - 0x000007fefe88f000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefec10000 - 0x000007fefed3d000 	C:\Windows\system32\RPCRT4.dll
+0x0000000077680000 - 0x000000007777a000 	C:\Windows\system32\USER32.dll
+0x000007fefe8f0000 - 0x000007fefe957000 	C:\Windows\system32\GDI32.dll
+0x000007fefe1d0000 - 0x000007fefe1de000 	C:\Windows\system32\LPK.dll
+0x000007fefe700000 - 0x000007fefe7c9000 	C:\Windows\system32\USP10.dll
+0x000007fefd040000 - 0x000007fefd234000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_fa396087175ac9ac\COMCTL32.dll
+0x000007fefe670000 - 0x000007fefe6e1000 	C:\Windows\system32\SHLWAPI.dll
+0x000007fefe1e0000 - 0x000007fefe20e000 	C:\Windows\system32\IMM32.DLL
+0x000007fefee10000 - 0x000007fefef19000 	C:\Windows\system32\MSCTF.dll
+0x00000000732d0000 - 0x00000000733a2000 	C:\Program Files\Java\jre7\bin\msvcr100.dll
+0x000000006e5d0000 - 0x000000006eda5000 	C:\Program Files\Java\jre7\bin\server\jvm.dll
+0x000007fef9920000 - 0x000007fef9929000 	C:\Windows\system32\WSOCK32.dll
+0x000007fefedc0000 - 0x000007fefee0d000 	C:\Windows\system32\WS2_32.dll
+0x000007fefe6f0000 - 0x000007fefe6f8000 	C:\Windows\system32\NSI.dll
+0x000007fefbdd0000 - 0x000007fefbe0b000 	C:\Windows\system32\WINMM.dll
+0x0000000077b70000 - 0x0000000077b77000 	C:\Windows\system32\PSAPI.DLL
+0x00000000732c0000 - 0x00000000732cf000 	C:\Program Files\Java\jre7\bin\verify.dll
+0x0000000073290000 - 0x00000000732b8000 	C:\Program Files\Java\jre7\bin\java.dll
+0x0000000073270000 - 0x0000000073285000 	C:\Program Files\Java\jre7\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 -Xbootclasspath:C:\Users\tinghaoma\AppData\Local\Android\sdk\platforms\android-19\android.jar 
+java_command: com.mth.user.Test
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.7.0_79
+CLASSPATH=.;C:\Program Files\Java\jdk1.7.0_79\lib;C:\Program Files\Java\jdk1.7.0_79\lib\tools.jar
+PATH=C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\ThinkPad\Bluetooth Software\;C:\Program Files\ThinkPad\Bluetooth Software\syswow64;C:\Program Files\Java\jdk1.7.0_79\bin;C:\Program Files\Java\jdk1.7.0_79\jre\bin;C:\mth\soft\TortoiseSVN\bin;C:\Program Files\SlikSvn\bin;C:\mth\soft\Git\Git\cmd;C:\Users\tinghaoma\AppData\Local\Android\sdk\platform-tools
+USERNAME=tinghaoma
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, erms, ht, tsc, tscinvbit, tscinv
+
+Memory: 4k page, physical 12271408k(6303292k free), swap 24540952k(18011528k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (24.79-b02) for windows-amd64 JRE (1.7.0_79-b15), built on Apr 10 2015 12:36:16 by "java_re" with unknown MS VC++:1600
+
+time: Fri Oct 09 15:12:26 2015
+elapsed time: 0 seconds
+
