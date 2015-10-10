@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AIDL</string>
+    <string name="bindService">bindService</string>
+    <string name="addone">addonebook</string>
+    <string name="getallbook">getallbook</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
