@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ChangeRemoteViewUI.iml" filepath="$PROJECT_DIR$/ChangeRemoteViewUI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/remoteview_client/remoteview_client.iml" filepath="$PROJECT_DIR$/remoteview_client/remoteview_client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/remoteview_server/remoteview_server.iml" filepath="$PROJECT_DIR$/remoteview_server/remoteview_server.iml" />
+    </modules>
+  </component>
+</project>
