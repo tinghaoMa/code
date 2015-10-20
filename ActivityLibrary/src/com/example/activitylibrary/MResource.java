@@ -8,6 +8,7 @@ import android.content.Context;
  *
  */
 public class MResource {
+
 	public static int getIdByName(Context context, String className, String name) {
 		String packageName = context.getPackageName();
 		Class r = null;
@@ -41,4 +42,45 @@ public class MResource {
 
 		return id;
 	}
+	/**
+	 * 资源Id是一个数组的时候
+	 * @param context
+	 * @param className
+	 * @param name
+	 * @return
+	 */
+	public static int[] getIdsByName(Context context, String className, String name) {
+	    String packageName = context.getPackageName();
+	    Class r = null;
+	    int[] ids = null;
+	    try {
+	      r = Class.forName(packageName + ".R");
+
+	      Class[] classes = r.getClasses();
+	      Class desireClass = null;
+
+	      for (int i = 0; i < classes.length; ++i) {
+	        if (classes[i].getName().split("\\$")[1].equals(className)) {
+	          desireClass = classes[i];
+	          break;
+	        }
+	      }
+
+	      if ((desireClass != null) && (desireClass.getField(name).get(desireClass) != null) && (desireClass.getField(name).get(desireClass).getClass().isArray()))
+	        ids = (int[])desireClass.getField(name).get(desireClass);
+	    }
+	    catch (ClassNotFoundException e) {
+	      e.printStackTrace();
+	    } catch (IllegalArgumentException e) {
+	      e.printStackTrace();
+	    } catch (SecurityException e) {
+	      e.printStackTrace();
+	    } catch (IllegalAccessException e) {
+	      e.printStackTrace();
+	    } catch (NoSuchFieldException e) {
+	      e.printStackTrace();
+	    }
+
+	    return ids;
+	  }
 }
