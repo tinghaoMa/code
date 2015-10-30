@@ -1,0 +1,12 @@
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.Holo.Light.NoActionBar">
+        <item name="mmm">@style/My_Style</item>
+    </style>
+
+    <style name="My_Style">
+        <item name="com.mth.themetest:myTextColor">@color/GREEN</item>
+        <item name="com.mth.themetest:myTextSize">30sp</item>
+        <item name="com.mth.themetest:isEdit">true</item>
+    </style>
+</resources>
