@@ -12,5 +12,23 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_centerHorizontal="true"
+        android:text="Client" />
+
+    <Button
+        android:id="@+id/id_bt_con_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="conn service"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/id_bt_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_bt_con_service"
+        android:layout_centerInParent="true"
+        android:text="send msg to server"
+        android:textSize="20sp" />
 </RelativeLayout>
