@@ -2,7 +2,7 @@ package com.mth.textview_spannabledemo;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.InputType;
@@ -18,16 +18,20 @@ import android.text.style.ClickableSpan;
 import android.text.style.DrawableMarginSpan;
 import android.text.style.EasyEditSpan;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mth.span.VerticalImageSpan;
+
 /**
  * 常用的就是上述的四个值，这里我们来分别解释以下:
- *  Spanned.SPAN_EXCLUSIVE_EXCLUSIVE(前后都不包括)[]
- *  Spanned.SPAN_INCLUSIVE_EXCLUSIVE(前面包括，后面不包括)[)
- *  Spanned.SPAN_EXCLUSIVE_INCLUSIVE(前面不包括，后面包括)(]
- *  Spanned.SPAN_INCLUSIVE_INCLUSIVE(前后都包括)()
+ * Spanned.SPAN_EXCLUSIVE_EXCLUSIVE(前后都不包括)[]
+ * Spanned.SPAN_INCLUSIVE_EXCLUSIVE(前面包括，后面不包括)[)
+ * Spanned.SPAN_EXCLUSIVE_INCLUSIVE(前面不包括，后面包括)(]
+ * Spanned.SPAN_INCLUSIVE_INCLUSIVE(前后都包括)()
  */
 public class MainActivity extends Activity {
     private TextView textView;
@@ -44,7 +48,28 @@ public class MainActivity extends Activity {
 //        setCS();  //点击事件
 //        setDMSpan();
 //        setEdit();
-        setfCS();
+//        setfCS();
+        setImageSpan();
+    }
+
+    private void setImageSpan() {
+        String originText = "#重磅消息#";
+        SpannableStringBuilder builder = new SpannableStringBuilder(originText);
+        int size = builder.length();
+        Log.e("MTH", "sizesize=" +size);
+        builder.append("*");
+        Log.e("MTH", "add=" + builder.length());
+        VerticalImageSpan imageSpan = new VerticalImageSpan(getGiftDrawable());
+        builder.setSpan(imageSpan, size, size + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        textView.setText(builder);
+    }
+
+    private Drawable getGiftDrawable() {
+        int size = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 15, getResources().getDisplayMetrics());
+        Log.e("MTH", "size=" + size);
+        Drawable drawable = getResources().getDrawable(R.mipmap.ic_launcher);
+        drawable.setBounds(0, 0, size, size);
+        return drawable;
     }
 
     /**
@@ -120,7 +145,7 @@ public class MainActivity extends Activity {
     private void setfCS() {
         String source1 = "#重磅消息#近日谷歌放出Android N的第二个开发者预览版(Developer Preview)";
         SpannableString span = new SpannableString(source1);
-        span.setSpan(new ForegroundColorSpan(Color.RED), 10, source1.length()/2+5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        span.setSpan(new ForegroundColorSpan(Color.RED), 10, source1.length() / 2 + 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         textView.setText(span);
     }
 
