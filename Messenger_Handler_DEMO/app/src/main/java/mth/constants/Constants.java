@@ -2,6 +2,7 @@ package mth.constants;
 
 
 public class Constants {
+	
     public static final int SERVICE_CONNECT_SUCESS = 0x001;
     public static final int MSG_CLIENT = 0x002;
     public static final int MSG_DEFAULT = 0x003;
