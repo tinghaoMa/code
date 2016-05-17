@@ -1,0 +1,124 @@
+时序图  
+	wm ->WindowManager ->WindowManagerImpl ->
+
+	1.ActivityThread---H(Handler)
+	
+		1.1 handleLaunchActivity 
+		
+			performLaunchActivity() ->  mInstrumentation.newActivity()
+								     
+										makeApplication()->	instrumentation.callApplicationOnCreate()->app.onCreate()
+									  
+										activity.attach()-> mWindow = PolicyManager.makeNewWindow(this);
+															mWindow.setCallback(this);
+															mWindow.setWindowManager;
+															
+										mInstrumentation.callActivityOnCreate() ->activity.performCreate()->onCreate()
+										
+										activity.performStart() -> mInstrumentation.callActivityOnStart(this);->activity.onStart();
+										
+										mActivities.put(r.token, r);//放到集合里面去
+		
+		1.2 handleResumeActivity
+		
+		    performResumeActivity() ->  r.activity.performResume();-> performRestart(); ->    mInstrumentation.callActivityOnRestart(this); -> activity.onStart();
+																	  mInstrumentation.callActivityOnResume(this); ->activity.onResume();
+										
+										r.window = r.activity.getWindow();
+										View decor = r.window.getDecorView();
+										decor.setVisibility(View.INVISIBLE);
+										ViewManager wm = a.getWindowManager();
+										WindowManager.LayoutParams l = r.window.getAttributes();
+										a.mDecor = decor;(package)
+										wm.addView(decor, l); ->  mGlobal.addView() ->  root = new ViewRootImpl(view.getContext(), display);
+																						view.setLayoutParams(wparams);
+																						mViews.add(decor);
+																						mRoots.add(root);
+																						root.setView(decor, wparams, panelParentView); -> requestLayout(); ->scheduleTraversals(); ->执行mTraversalRunnable ->doTraversal(); ->performTraversals();
+										
+										wm.updateViewLayout(decor, l); ->mGlobal.updateViewLayout() ->  ViewRootImpl root = mRoots.get(index);
+																									    mParams.remove(index);
+																										mParams.add(index, wparams);
+																										root.setLayoutParams(wparams, false); -> requestLayout(); ->scheduleTraversals(); ->执行mTraversalRunnable ->doTraversal(); ->performTraversals();
+										
+										mNumVisibleActivities++;
+										
+										r.activity.makeVisible(); -> wm.addView(mDecor, getWindow().getAttributes());
+																	 mWindowAdded = true;
+																	 mDecor.setVisibility(View.VISIBLE);
+			
+		1.3 handlePauseActivity
+		
+		    performPauseActivity() ->   callCallActivityOnSaveInstanceState(r); ->mInstrumentation.callActivityOnSaveInstanceState() ->activity.performSaveInstanceState() -> onSaveInstanceState(outState);
+										
+										mInstrumentation.callActivityOnPause(r.activity); -> activity.performPause(); ->  onPause();
+										
+		
+		1.4	handleStopActivity()	
+		
+			performStopActivityInner() -> callCallActivityOnSaveInstanceState(r); ->mInstrumentation.callActivityOnSaveInstanceState() ->activity.performSaveInstanceState() -> onSaveInstanceState(outState);
+										  
+										  r.activity.performStop(); -> mInstrumentation.callActivityOnStop(this); ->activity.onStop();
+										  
+		1.5 handleDestroyActivity
+			
+			performDestroyActivity() -> 判断是否调用了onPause和onStop ->mInstrumentation.callActivityOnDestroy(r.activity); -> activity.performDestroy(); -> onDestroy();
+																			                                                                                 mWindow.destroy();
+																																							 
+										 mActivities.remove(token);
+										 
+		1.6 handleRelaunchActivity
+			
+			callCallActivityOnSaveInstanceState(r); -> mInstrumentation.callActivityOnSaveInstanceState() ->activity.performSaveInstanceState() -> onSaveInstanceState(outState);
+			
+			handleDestroyActivity()-> performDestroyActivity()
+			
+			handleLaunchActivity(r, currentIntent);
+			
+
+	2.ActivityThread-main()
+			
+			启动Activity
+			thread.attach(false); ->	final IActivityManager mgr = ActivityManagerNative.getDefault();
+										mgr.attachApplication(mAppThread);			-> mRemote.transact(ATTACH_APPLICATION_TRANSACTION, data, reply, 0); ->    IApplicationThread app = ApplicationThreadNative.asInterface(data.readStrongBinder());   	
+																																							   ActivityManagerService   attachApplication(app); -> attachApplicationLocked(thread, callingPid);	
+																																																			    -> mStackSupervisor.attachApplicationLocked(app) 
+																																																				->realStartActivityLocked()  
+			其他方法																																																	-> app.thread.scheduleLaunchActivity		
+			Looper.prepareMainLooper();
+			ActivityThread thread = new ActivityThread();
+		    thread.attach(false);
+			Looper.loop();
+			
+	3.Activity setContentView
+		
+		setContentView -> getWindow().setContentView(view); ->PhoneWindow.setContentView() ->   if (mContentParent == null) {
+																									installDecor();                  		
+																								} else {
+																									mContentParent.removeAllViews();
+																								}                                             -> if (mDecor == null) {
+																																					mDecor = generateDecor();	->new DecorView(getContext(), -1);
+																																				}
+
+																																				
+																																				generateLayout(mDecor);  ->//根据不同的style生成不同的decorview啊
+																																											 View in = mLayoutInflater.inflate(layoutResource, null);
+																																											// 加入到deco中,所以应该是其第一个child
+																																											decor.addView(in, new ViewGroup.LayoutParams(MATCH_PARENT, MATCH_PARENT));
+																																											mContentRoot = (ViewGroup) in; 
+																																											//给DecorView的第一个child是mContentView
+																																											// 这是获得所谓的content
+																																											ViewGroup contentParent = (ViewGroup)findViewById(ID_ANDROID_CONTENT);
+																																				
+																																				cb.onContentChanged();
+																																				
+																																				
+																																				//DecorView正式添加并显示
+																																				void makeVisible() {
+																																					  if (!mWindowAdded) {
+																																						ViewManager wm = getWindowManager();
+																																						wm.addView(mDecor, getWindow().getAttributes());
+																																						mWindowAdded = true;
+																																					}
+																																					mDecor.setVisibility(View.VISIBLE);
+																																				}									
