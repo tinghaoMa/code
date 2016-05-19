@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/androiddaemonservice/AndroidDaemonService.iml" filepath="$PROJECT_DIR$/androiddaemonservice/AndroidDaemonService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/github.iml" filepath="$PROJECT_DIR$/github.iml" />
+      <module fileurl="file://$PROJECT_DIR$/save_process/save_process.iml" filepath="$PROJECT_DIR$/save_process/save_process.iml" />
+    </modules>
+  </component>
+</project>
