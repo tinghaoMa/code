@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/matinghao/test/code/volley/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/matinghao/test/code/volley/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-24.2.1_526e855201bb1c20ac6c638d551b18d6ae1d904d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/matinghao/test/code/volley/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/matinghao/test/code/volley/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.1_1e19a2e4b51dcfc56980e1d5f59204414033cd87.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/matinghao/test/code/volley/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/matinghao/test/code/volley/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_2c978aafd353c7234c10bd150a60fa1fe57f5e66.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/matinghao/test/code/volley/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/matinghao/test/code/volley/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.1_25ef6fbaef8aa2acf66d91d11d868a7403a642c3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/matinghao/test/code/volley/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/matinghao/test/code/volley/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.2.1_69e22b838bfe1c95130bbd938894e997b35d785d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/matinghao/android/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/matinghao/test/code/volley/app/build/intermediates/pre-dexed/debug/support-annotations-24.2.1_32e9a27b98481118728690a0fc6c38267708d5d4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/matinghao/test/code/volley/app/build/intermediates/exploded-aar/volley/volly_lirbrary/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ef1719f4a7c5766028b6f5014dfaa9a1afbfa3ae">
+        <dex dex="/Users/matinghao/test/code/volley/app/build/intermediates/pre-dexed/debug/volley-volly_lirbrary-unspecified_3b17f33bd8524873a02597b512ef1cdfa97fe06e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/matinghao/test/code/volley/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/matinghao/test/code/volley/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_371587a1004026ea5f6576e66a7d7b3a602e7f12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/matinghao/test/code/volley/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/matinghao/test/code/volley/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.1_cb1d2a0a6c1bd851fa0816941a694b787cab0e01.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/matinghao/test/code/volley/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/matinghao/test/code/volley/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.2.1_8a0905932adf8efbf7bdee15056bf15f5436f97d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/matinghao/test/code/volley/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/matinghao/test/code/volley/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.2.1_c792b853007da7608e2b740b53b47bb35bc1f79d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/matinghao/test/code/volley/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/matinghao/test/code/volley/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.2.1_1712faae637c2be58d42e32069dd25eba9594636.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/matinghao/test/code/volley/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/matinghao/test/code/volley/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.1_6770c5ea98745f2e8873cbb8d4c84aa71353b7e2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/matinghao/test/code/volley/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/matinghao/test/code/volley/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_2f43a119d8940c607adea17569ad790d3d36cbd0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/matinghao/test/code/volley/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/matinghao/test/code/volley/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_3e0207c845efb5d16f4b406c8bafea2231a4d29c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/matinghao/test/code/volley/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/matinghao/test/code/volley/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_095eef5f066e280c940e6e590a7a37cc884d6db7.jar" />
+    </item>
+
+</items>
