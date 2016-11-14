@@ -1,9 +1,8 @@
-package com.mth.myapplication;
+package com.mth.jsdemo;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
