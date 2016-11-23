@@ -5,7 +5,8 @@ import android.graphics.Matrix;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import android.util.Log;
+import android.view.GestureDetector;
+import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
@@ -25,6 +26,11 @@ public class ZoomImageView extends ImageView implements ViewTreeObserver.OnGloba
     private Matrix mScaleMartrix;
     //捕获用户多指触控
     private ScaleGestureDetector mScaleGestureDetector;
+
+
+    //双击
+    private GestureDetector mGestureDetector;
+    private boolean isAutoScale = false;
 
     private int mTouchSlop;
 
@@ -53,8 +59,71 @@ public class ZoomImageView extends ImageView implements ViewTreeObserver.OnGloba
         return values[Matrix.MSCALE_X];
     }
 
+    private class AutoScaleRunnable implements Runnable {
+        private float mScaleTarget; //目标的缩放值
+        private float centerX; //缩放的中心点
+        private float centerY; //缩放的中心点
+        private final float BIGGER = 1.07f;
+        private final float SMALLER = 0.93f;
+
+        private float mTempScal;
+
+        public AutoScaleRunnable(float scaleTarget, float centerX, float centerY) {
+            mScaleTarget = scaleTarget;
+            this.centerX = centerX;
+            this.centerY = centerY;
+            if (getScale() < mScaleTarget) {
+                mTempScal = BIGGER;
+            }
+
+            if (getScale() > mScaleTarget) {
+                mTempScal = SMALLER;
+            }
+
+        }
+
+        @Override
+        public void run() {
+            mScaleMartrix.postScale(mTempScal, mTempScal, centerX, centerY);
+            checkBorderAndCenterWhenScale();
+            setImageMatrix(mScaleMartrix);
+            if ((mTempScal > 1.0f && getScale() < mScaleTarget) || (mTempScal < 1.0f && getScale
+                    () > mScaleTarget)) {
+                postDelayed(this, 16);
+            }else{
+                float scale = mScaleTarget / getScale();
+                mScaleMartrix.postScale(scale, scale, centerX, centerY);
+                checkBorderAndCenterWhenScale();
+                setImageMatrix(mScaleMartrix);
+                isAutoScale = false;
+            }
+        }
+    }
 
     private void init(Context context) {
+        mGestureDetector = new GestureDetector(context, new SimpleOnGestureListener() {
+            @Override
+            public boolean onDoubleTap(MotionEvent e) {
+                System.out.println("segg6575----ZoomImageView.onDoubleTap");
+                if(isAutoScale){
+                    return true;
+                }
+                float x = e.getX();
+                float y = e.getY();
+                if (getScale() < mMidScale) {
+//                    mScaleMartrix.postScale(mMidScale / getScale(), mMidScale / getScale(), x, y);
+//                    setImageMatrix(mScaleMartrix);
+
+                    postDelayed(new AutoScaleRunnable(mMidScale, x, y),10);
+                } else {
+                    postDelayed(new AutoScaleRunnable(mInitScale, x, y),10);
+//                    mScaleMartrix.postScale(mInitScale / getScale(), mInitScale / getScale(), x, y);
+//                    setImageMatrix(mScaleMartrix);
+                }
+                return true;
+            }
+        });
+
         mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
 
         mScaleMartrix = new Matrix();
@@ -240,6 +309,10 @@ public class ZoomImageView extends ImageView implements ViewTreeObserver.OnGloba
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
+        if (mGestureDetector.onTouchEvent(event)) {
+            return true;
+        }
+
         mScaleGestureDetector.onTouchEvent(event);
         int pointerCount = event.getPointerCount();
         float x = 0;
@@ -268,11 +341,11 @@ public class ZoomImageView extends ImageView implements ViewTreeObserver.OnGloba
                 }
                 if (isCanDrag) {
                     RectF rectf = getMatrixRectf();
-                    if(rectf.width()<getWidth()){
+                    if (rectf.width() < getWidth()) {
                         dx = 0;
                     }
 
-                    if(rectf.height()<getHeight()){
+                    if (rectf.height() < getHeight()) {
                         dy = 0;
                     }
 
