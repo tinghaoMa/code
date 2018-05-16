@@ -103,4 +103,10 @@ public class MainActivity extends Activity {
         }
     };
 
+
+    @Override
+    public void onContentChanged() {
+        super.onContentChanged();
+        System.out.println("segg6575---MainActivity.onContentChanged");
+    }
 }
