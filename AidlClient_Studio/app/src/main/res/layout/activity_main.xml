@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/id_bindservice_bt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bindService" />
+
+    <Button
+        android:id="@+id/id_stopservice_bt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/unBndService" />
+
+    <Button
+        android:id="@+id/id_showall_bt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/showall" />
+
+    <Button
+        android:id="@+id/id_addone_bt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/addOneBook" />
+
+</LinearLayout>
