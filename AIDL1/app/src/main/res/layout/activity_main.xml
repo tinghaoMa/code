@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/id_show_tv"
+        android:layout_width="fill_parent"
+        android:gravity="center"
+        android:layout_height="200dp" />
+
+    <Button
+        android:id="@+id/id_bind_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/bindService" />
+
+    <Button
+        android:id="@+id/id_addbook_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addone" />
+
+    <Button
+        android:id="@+id/id_getallbook_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/getallbook" />
+
+</LinearLayout>
