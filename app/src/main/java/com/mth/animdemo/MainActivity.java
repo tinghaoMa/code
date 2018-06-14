@@ -24,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
         textview = findViewById(R.id.tv);
 
-        playSet();
+
+        //ViewPropertyAnimator 简单动画写法
+        textview.animate().x(500).y(500).setDuration(5000);
 
     }
 
