@@ -1,5 +1,7 @@
 package com.mth.view;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -42,6 +44,27 @@ public class MyAnimView extends View {
         mPoint = new Point(RADIUS, RADIUS);
     }
 
+
+    /**
+     * ObjectAnimator在设计的时候就没有针对于View来进行设计，而是针对于任意对象的，
+     * 它所负责的工作就是不断地向某个对象中的某个属性进行赋值，
+     * 然后对象根据属性值的改变再来决定如何展现出来。
+     */
+    private String color;
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+        mPaint.setColor(Color.parseColor(color));
+        invalidate();
+    }
+
+
+
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -60,11 +83,18 @@ public class MyAnimView extends View {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 mPoint = (Point) animation.getAnimatedValue();
-                invalidate();
+//                invalidate();
             }
         });
-        anim.setDuration(5000);
-        anim.start();
+        ObjectAnimator anim2 = ObjectAnimator.ofObject(this,
+                "color", //其实是更改color属性
+                new ColorEvaluator(),
+                "#0000FF",
+                "#FF0000");
+        AnimatorSet animSet = new AnimatorSet();
+        animSet.play(anim).with(anim2);
+        animSet.setDuration(5000);
+        animSet.start();
     }
 
     private void drawCircle(Canvas canvas) {
@@ -72,6 +102,7 @@ public class MyAnimView extends View {
         int y = mPoint.y;
         canvas.drawCircle(x, y, RADIUS, mPaint);
     }
+
 
 
     public class PointEvaluator implements TypeEvaluator {
