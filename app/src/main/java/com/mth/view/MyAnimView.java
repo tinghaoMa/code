@@ -12,6 +12,8 @@ import android.graphics.Point;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.BounceInterpolator;
 
 /**
  * ValueAnimator 高级用法
@@ -63,8 +65,6 @@ public class MyAnimView extends View {
     }
 
 
-
-
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -86,11 +86,17 @@ public class MyAnimView extends View {
 //                invalidate();
             }
         });
+        //越来越快
+//        anim.setInterpolator(new AccelerateInterpolator(2f)); //越来越快
+        //回弹效果
+//        anim.setInterpolator(new BounceInterpolator());
+        //先加速后减速
+        anim.setInterpolator(new DecelerateAccelerateInterpolator());
+
+
         ObjectAnimator anim2 = ObjectAnimator.ofObject(this,
                 "color", //其实是更改color属性
-                new ColorEvaluator(),
-                "#0000FF",
-                "#FF0000");
+                new ColorEvaluator(), "#0000FF", "#FF0000");
         AnimatorSet animSet = new AnimatorSet();
         animSet.play(anim).with(anim2);
         animSet.setDuration(5000);
@@ -102,7 +108,6 @@ public class MyAnimView extends View {
         int y = mPoint.y;
         canvas.drawCircle(x, y, RADIUS, mPaint);
     }
-
 
 
     public class PointEvaluator implements TypeEvaluator {
