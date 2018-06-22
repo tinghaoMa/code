@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.frankzhu.recyclerviewdemo.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -52,7 +52,7 @@ public class NormalRecyclerViewAdapter extends RecyclerView.Adapter<NormalRecycl
     }
 
     public static class NormalTextViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.text_view)
+        @BindView(R.id.text_view)
         TextView mTextView;
 
         NormalTextViewHolder(View view) {

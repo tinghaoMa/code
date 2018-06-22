@@ -15,7 +15,7 @@ import com.frankzhu.recyclerviewdemo.bean.DemoItem;
 import com.frankzhu.recyclerviewdemo.ui.DetailActivity;
 import com.frankzhu.recyclerviewdemo.ui.SelectActivity;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -50,7 +50,7 @@ public class ItemsAdapter extends BaseAbstractRecycleCursorAdapter<RecyclerView.
     }
 
     public static class NormalTextViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.text_view)
+        @BindView(R.id.text_view)
         TextView mTextView;
         ItemsAdapter mAdapter;
 

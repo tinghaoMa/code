@@ -13,7 +13,7 @@ import com.frankzhu.recyclerviewdemo.R;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -69,7 +69,7 @@ public class AnimAdapter extends RecyclerView.Adapter<AnimAdapter.NormalTextView
     }
 
     public static class NormalTextViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.text_view)
+        @BindView(R.id.text_view)
         TextView mTextView;
         AnimAdapter mAdapter;
 

@@ -1,6 +1,7 @@
 package com.frankzhu.recyclerviewdemo.fragment;
 
 import android.database.Cursor;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -19,7 +20,7 @@ import com.frankzhu.recyclerviewdemo.db.ItemsDataHelper;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -34,7 +35,7 @@ import butterknife.ButterKnife;
  * Why & What is modified:
  */
 public class ItemsFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
-    @Bind(R.id.recycler_view)
+    @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
     private ItemsDataHelper mDataHelper;
     private ItemsAdapter mAdapter;
@@ -101,6 +102,6 @@ public class ItemsFragment extends Fragment implements LoaderManager.LoaderCallb
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+
     }
 }

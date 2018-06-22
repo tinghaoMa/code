@@ -18,7 +18,7 @@ import com.frankzhu.recyclerviewdemo.view.DividerItemDecoration;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -33,7 +33,7 @@ import butterknife.ButterKnife;
  * Why & What is modified:
  */
 public class SingleSelectFragment extends Fragment {
-    @Bind(R.id.recycler_view)
+    @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
 
     public SingleSelectFragment() {
@@ -67,6 +67,6 @@ public class SingleSelectFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+
     }
 }

@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.frankzhu.recyclerviewdemo.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -45,9 +45,9 @@ public abstract class SettingSingleSelectAdapter<T> extends BaseSingleSelectStat
     public abstract String getItemTitle(int position);
 
     static class SettingSingleSelectViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.tv_name)
+        @BindView(R.id.tv_name)
         TextView mTvName;
-        @Bind(R.id.iv_check)
+        @BindView(R.id.iv_check)
         ImageView mIvCheck;
 
         SettingSingleSelectAdapter mAdapter;

@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.frankzhu.recyclerviewdemo.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -67,7 +67,7 @@ public class HeaderBottomItemAdapter extends BaseMultipleItemAdapter {
     }
 
     public static class ContentViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.text_view)
+        @BindView(R.id.text_view)
         TextView mTextView;
 
         ContentViewHolder(View view) {
@@ -82,9 +82,9 @@ public class HeaderBottomItemAdapter extends BaseMultipleItemAdapter {
     }
 
     public static class HeaderViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.text_view)
+        @BindView(R.id.text_view)
         TextView mTextView;
-        @Bind(R.id.image_view)
+        @BindView(R.id.image_view)
         ImageView mImageView;
 
         HeaderViewHolder(View view) {
@@ -99,9 +99,9 @@ public class HeaderBottomItemAdapter extends BaseMultipleItemAdapter {
     }
 
     public static class BottomViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.text_view)
+        @BindView(R.id.text_view)
         TextView mTextView;
-        @Bind(R.id.image_view)
+        @BindView(R.id.image_view)
         ImageView mImageView;
 
         BottomViewHolder(View view) {

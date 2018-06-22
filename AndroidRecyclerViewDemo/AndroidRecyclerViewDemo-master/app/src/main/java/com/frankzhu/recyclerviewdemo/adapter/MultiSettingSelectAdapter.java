@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.frankzhu.recyclerviewdemo.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnLongClick;
@@ -59,9 +59,9 @@ public abstract class MultiSettingSelectAdapter<T> extends BaseMultiSelectAdapte
     }
 
     static class MultiSettingSelectViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.tv_name)
+        @BindView(R.id.tv_name)
         TextView mTvName;
-        @Bind(R.id.iv_check)
+        @BindView(R.id.iv_check)
         ImageView mIvCheck;
 
         MultiSettingSelectAdapter mAdapter;

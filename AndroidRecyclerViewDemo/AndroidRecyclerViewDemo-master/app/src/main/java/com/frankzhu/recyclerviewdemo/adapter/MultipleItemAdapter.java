@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.frankzhu.recyclerviewdemo.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -71,7 +71,7 @@ public class MultipleItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     public static class TextViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.text_view)
+        @BindView(R.id.text_view)
         TextView mTextView;
 
         TextViewHolder(View view) {
@@ -86,9 +86,9 @@ public class MultipleItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     public static class ImageViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.text_view)
+        @BindView(R.id.text_view)
         TextView mTextView;
-        @Bind(R.id.image_view)
+        @BindView(R.id.image_view)
         ImageView mImageView;
 
         ImageViewHolder(View view) {
