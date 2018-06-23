@@ -1,5 +1,6 @@
 package com.example.itck_mth.recyclerviewdemo;
 
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,13 +18,14 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private NormalAdapter<String> mAdapter;
+    private List<String> mData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mRecyclerView = findViewById(R.id.rl);
-        mAdapter = new NormalAdapter<String>(initData()) {
+        mAdapter = new NormalAdapter<String>(mData = initData()) {
             @Override
             protected int getItemView(int viewType) {
                 switch (viewType) {
@@ -69,9 +71,43 @@ public class MainActivity extends AppCompatActivity {
     private List<String> initData() {
         ArrayList<String> list = new ArrayList<>();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             list.add(" i = " + i);
         }
         return list;
+    }
+
+    private int loop = 1;
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getWindow().getDecorView().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                switch (loop) {
+                    case 0:
+                        addItem();
+                        break;
+                    case 1:
+                        removeItem();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }, 3000);
+
+    }
+
+    private void removeItem() {
+        mData.remove(0);
+        mAdapter.notifyItemRemoved(1);
+    }
+
+    private void addItem() {
+        mData.add(0, "hello world");
+        mAdapter.notifyItemChanged(0);
     }
 }
