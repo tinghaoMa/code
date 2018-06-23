@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/itck_mth/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/Users/itck_mth/study/code/AndroidRecyclerViewDemo/AndroidRecyclerViewDemo-master/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-458827a7d6db24f4f221193294b10b4c71ff29f7.jar" />
+    </item>
+    <item
+        jar="/Users/itck_mth/study/code/AndroidRecyclerViewDemo/AndroidRecyclerViewDemo-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/itck_mth/study/code/AndroidRecyclerViewDemo/AndroidRecyclerViewDemo-master/app/build/intermediates/pre-dexed/debug/classes-f7e9d60c02f04dd5a11f3f3e08f414245159d55c.jar" />
+    </item>
+    <item
+        jar="/Users/itck_mth/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/7.0.1/d5d13ea991eab0252e3710e5df3d6a9d4b21d461/butterknife-7.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
+        <dex dex="/Users/itck_mth/study/code/AndroidRecyclerViewDemo/AndroidRecyclerViewDemo-master/app/build/intermediates/pre-dexed/debug/butterknife-7.0.1-0695fc3aeb57b217c6076b5cbbe8c49746cb979f.jar" />
+    </item>
+    <item
+        jar="/Users/itck_mth/study/code/AndroidRecyclerViewDemo/AndroidRecyclerViewDemo-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/itck_mth/study/code/AndroidRecyclerViewDemo/AndroidRecyclerViewDemo-master/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-d68ca6d42720aa9b5259c781652393ce5319a150.jar" />
+    </item>
+    <item
+        jar="/Users/itck_mth/study/code/AndroidRecyclerViewDemo/AndroidRecyclerViewDemo-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/itck_mth/study/code/AndroidRecyclerViewDemo/AndroidRecyclerViewDemo-master/app/build/intermediates/pre-dexed/debug/classes-f17ebeeaae3f49d8dc154c8305bd475d11e73e3a.jar" />
+    </item>
+    <item
+        jar="/Users/itck_mth/study/code/AndroidRecyclerViewDemo/AndroidRecyclerViewDemo-master/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4356e230a981d1bbf047d848b91bc0d9b7c5bacc">
+        <dex dex="/Users/itck_mth/study/code/AndroidRecyclerViewDemo/AndroidRecyclerViewDemo-master/app/build/intermediates/pre-dexed/debug/classes-4a4f1302088d01cf088790ee50dcd1b8591299b0.jar" />
+    </item>
+    <item
+        jar="/Users/itck_mth/study/code/AndroidRecyclerViewDemo/AndroidRecyclerViewDemo-master/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="39ae02ce40c3ac828abbf780ce0ff5d7a28b7d6a">
+        <dex dex="/Users/itck_mth/study/code/AndroidRecyclerViewDemo/AndroidRecyclerViewDemo-master/app/build/intermediates/pre-dexed/debug/classes-15b28c377ab7db293bf6e993247a7960409e8e74.jar" />
+    </item>
+
+</items>
